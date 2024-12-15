@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcr418rpntf58"]
+[gd_scene load_steps=4 format=3 uid="uid://bcr418rpntf58"]
+
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="1_siyfi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fcsj"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_k0nuh"]
+font = ExtResource("1_siyfi")
 font_size = 111
 font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,5 +51,6 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_siyfi")
 theme_override_font_sizes/font_size = 41
-text = "- START -"
+text = " - START - "
