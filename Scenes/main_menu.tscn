@@ -46,7 +46,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "THE GAME"
+text = "Stock Trades"
 label_settings = SubResource("LabelSettings_k0nuh")
 horizontal_alignment = 1
 
