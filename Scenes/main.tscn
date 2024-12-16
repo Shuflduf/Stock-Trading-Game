@@ -32,9 +32,9 @@ shader_parameter/vignette_opacity = 0.5
 shader = ExtResource("1_ova3s")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.05
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
-shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/scanlines_width = 0.1
+shader_parameter/grille_opacity = 0.1
+shader_parameter/resolution = Vector2(720, 540)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
 shader_parameter/roll_speed = 2.0
@@ -74,3 +74,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[connection signal="go_to_game" from="MainMenu" to="." method="_on_main_menu_go_to_game"]
