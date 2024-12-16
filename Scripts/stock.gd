@@ -1,6 +1,6 @@
 class_name Stock
 extends Resource
-## Represents a stock. Can be bought and sold, has supply and demand.
+## Represents a stock. Shares can be bought and sold, has supply and demand.
 
 ## Name of the stock
 @export var name: String
