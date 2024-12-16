@@ -5,8 +5,11 @@ extends Resource
 ## Name of the stock
 @export var name: String
 
-## How much of the stock is in circulation in the economy
+## Abbreviation used for the stock, should be UPPERCASE
+@export var abbreviation: String
+
+## How many shares are in circulation in the economy
 @export var quantity: int
 
-## Starting price of one stock. This value will change, and is only set here as a starting point.
+## Starting price of one share. This value will change, and is only set here as a starting point.
 @export var price: int

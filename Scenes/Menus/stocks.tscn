@@ -94,12 +94,12 @@ layout_mode = 2
 text = "STOCK GOES HERE"
 label_settings = SubResource("LabelSettings_uffqd")
 
-[node name="PanelContainer7" type="PanelContainer" parent="ScrollContainer/VFlowContainer/PanelContainer6"]
+[node name="PanelContainer7" type="PanelContainer" parent="ScrollContainer/VFlowContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_cgpof")
 
-[node name="Label" type="Label" parent="ScrollContainer/VFlowContainer/PanelContainer6/PanelContainer7"]
+[node name="Label" type="Label" parent="ScrollContainer/VFlowContainer/PanelContainer7"]
 layout_mode = 2
 text = "STOCK GOES HERE"
 label_settings = SubResource("LabelSettings_uffqd")
@@ -110,6 +110,16 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_cgpof")
 
 [node name="Label" type="Label" parent="ScrollContainer/VFlowContainer/PanelContainer8"]
+layout_mode = 2
+text = "STOCK GOES HERE"
+label_settings = SubResource("LabelSettings_uffqd")
+
+[node name="PanelContainer9" type="PanelContainer" parent="ScrollContainer/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgpof")
+
+[node name="Label" type="Label" parent="ScrollContainer/VFlowContainer/PanelContainer9"]
 layout_mode = 2
 text = "STOCK GOES HERE"
 label_settings = SubResource("LabelSettings_uffqd")
