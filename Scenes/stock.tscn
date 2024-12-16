@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ulyi4ixow2j3"]
+
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="1_pkvwg"]
+[ext_resource type="Script" path="res://Scripts/stock_display.gd" id="1_y2ep8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgpof"]
+content_margin_left = 50.0
+content_margin_top = 100.0
+content_margin_right = 50.0
+content_margin_bottom = 100.0
+bg_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uffqd"]
+font = ExtResource("1_pkvwg")
+font_size = 46
+
+[node name="Stock" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgpof")
+script = ExtResource("1_y2ep8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "STOCK GOES HERE"
+label_settings = SubResource("LabelSettings_uffqd")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Abbreviation" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pkvwg")
+theme_override_font_sizes/font_size = 31
+text = "ABBREVIATION"
+horizontal_alignment = 1
