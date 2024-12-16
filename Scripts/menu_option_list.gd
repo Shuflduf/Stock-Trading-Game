@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@onready var content: MarginContainer = %Content
+
 @export var SIZE_CHANGE_SECONDS = 0.5
 
 var collapsed = false
@@ -42,3 +44,7 @@ func select_item(item: MenuOption):
         i.deselect()
     item.select()
     change_size_all()
+
+    if item.target_scene != null:
+        content.get_child(0).queue_free()
+        content.add_child(item.target_scene.instantiate())

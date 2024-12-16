@@ -9,6 +9,8 @@ signal selected
         item_name = value
         %Label.text = value
 
+@export var target_scene: PackedScene
+
 func minimize(time: float):
     var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
     tween.tween_property(%Label, ^"text", "", time)

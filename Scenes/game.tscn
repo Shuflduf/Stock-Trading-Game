@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c80rfug25n0er"]
+[gd_scene load_steps=8 format=3 uid="uid://c80rfug25n0er"]
 
 [ext_resource type="Script" path="res://Scripts/menu_option_list.gd" id="1_oyeuu"]
 [ext_resource type="PackedScene" uid="uid://brfg2httpwfmo" path="res://Scenes/menu_option.tscn" id="1_ucj8x"]
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_p326e"]
+[ext_resource type="PackedScene" uid="uid://bvr2uy20qdv3y" path="res://Scenes/Menus/stocks.tscn" id="3_kmg1g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axe7t"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,6 +13,11 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ft8bs"]
+font = ExtResource("2_p326e")
+font_size = 101
+font_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -30,76 +37,99 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_axe7t")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_50wdl")
 script = ExtResource("1_oyeuu")
 SIZE_CHANGE_SECONDS = 0.3
 
-[node name="Options" type="VBoxContainer" parent="PanelContainer"]
+[node name="Options" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="MenuOption" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+layout_mode = 2
+item_name = "This is a Thing"
+target_scene = ExtResource("3_kmg1g")
+
+[node name="MenuOption2" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption2" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption3" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption3" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption4" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption4" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption5" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption5" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption6" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption6" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption7" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption7" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption8" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption8" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption9" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption9" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption10" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption10" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption11" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption11" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption12" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption12" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption13" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption13" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="MenuOption14" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
 item_name = "This is a Thing"
 
-[node name="MenuOption14" parent="PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+[node name="Content" type="MarginContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-item_name = "This is a Thing"
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[connection signal="gui_input" from="PanelContainer" to="PanelContainer" method="_on_gui_input"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Content/CenterContainer"]
+layout_mode = 2
+text = "THING GOES HERE"
+label_settings = SubResource("LabelSettings_ft8bs")
+
+[connection signal="gui_input" from="HBoxContainer/PanelContainer" to="HBoxContainer/PanelContainer" method="_on_gui_input"]
