@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StocksList" load_steps=3 format=3 uid="uid://dyumw5aefx0bd"]
+
+[ext_resource type="Script" path="res://Scripts/stocks_list.gd" id="1_3lm0h"]
+[ext_resource type="Script" path="res://Scripts/stock.gd" id="2_7wfts"]
+
+[resource]
+script = ExtResource("1_3lm0h")
+stocks = Array[ExtResource("2_7wfts")]([])
