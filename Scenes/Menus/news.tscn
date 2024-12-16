@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://civchsspm2q14"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/news.gd" id="1_chnii"]
+[ext_resource type="PackedScene" uid="uid://dykeqy5j8g2rp" path="res://Scenes/news_item.tscn" id="2_psaq1"]
+
+[node name="News" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_chnii")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="NewsItem" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+title = "Title goes here"
+description = "sssssssssssssssssdfwerhyv3b2nrhyggsdgfyus7vt76sdy78fysdufys7dyfyu7eh23bvrk23hroasiyuahsfuihsduifhhsdijkvbhjxchbgvhjsdf"
+
+[node name="NewsItem2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2
+
+[node name="NewsItem11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_psaq1")]
+layout_mode = 2

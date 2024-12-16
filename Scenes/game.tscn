@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c80rfug25n0er"]
+[gd_scene load_steps=12 format=3 uid="uid://c80rfug25n0er"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_k6mn0"]
 [ext_resource type="Script" path="res://Scripts/menu_option_list.gd" id="1_oyeuu"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_p326e"]
 [ext_resource type="PackedScene" uid="uid://bvr2uy20qdv3y" path="res://Scenes/Menus/stocks.tscn" id="3_kmg1g"]
 [ext_resource type="PackedScene" uid="uid://cpx4pfglpcrs6" path="res://Scenes/Menus/profile.tscn" id="6_5viqj"]
+[ext_resource type="PackedScene" uid="uid://civchsspm2q14" path="res://Scenes/Menus/news.tscn" id="6_u35s7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axe7t"]
 bg_color = Color(1, 1, 1, 1)
@@ -69,6 +70,11 @@ size_flags_vertical = 4
 layout_mode = 2
 item_name = "View Stocks"
 target_scene = ExtResource("3_kmg1g")
+
+[node name="News" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
+layout_mode = 2
+item_name = "News"
+target_scene = ExtResource("6_u35s7")
 
 [node name="Profile" parent="HBoxContainer/PanelContainer/Options" instance=ExtResource("1_ucj8x")]
 layout_mode = 2
