@@ -1,8 +1,22 @@
-[gd_resource type="Resource" script_class="StocksList" load_steps=3 format=3 uid="uid://dyumw5aefx0bd"]
+[gd_resource type="Resource" script_class="StocksList" load_steps=5 format=3 uid="uid://dyumw5aefx0bd"]
 
 [ext_resource type="Script" path="res://Scripts/stocks_list.gd" id="1_3lm0h"]
 [ext_resource type="Script" path="res://Scripts/stock.gd" id="2_7wfts"]
 
+[sub_resource type="Resource" id="Resource_o8ik2"]
+script = ExtResource("2_7wfts")
+name = "Goose Inc."
+abbreviation = "GOOS"
+quantity = 100000
+price = 20
+
+[sub_resource type="Resource" id="Resource_i6rbw"]
+script = ExtResource("2_7wfts")
+name = "GroundBus"
+abbreviation = "GRBS"
+quantity = 1000000
+price = 65
+
 [resource]
 script = ExtResource("1_3lm0h")
-stocks = Array[ExtResource("2_7wfts")]([])
+stocks = Array[ExtResource("2_7wfts")]([SubResource("Resource_o8ik2"), SubResource("Resource_i6rbw")])
