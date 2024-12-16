@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StocksList" load_steps=6 format=3 uid="uid://dyumw5aefx0bd"]
+[gd_resource type="Resource" script_class="StocksList" load_steps=13 format=3 uid="uid://dyumw5aefx0bd"]
 
 [ext_resource type="Script" path="res://Scripts/stocks_list.gd" id="1_3lm0h"]
 [ext_resource type="Script" path="res://Scripts/stock.gd" id="2_7wfts"]
@@ -14,16 +14,65 @@ price = 20
 script = ExtResource("2_7wfts")
 name = "GroundBus"
 abbreviation = "GRBS"
-quantity = 1000000
+quantity = 700000
 price = 65
 
 [sub_resource type="Resource" id="Resource_spprh"]
 script = ExtResource("2_7wfts")
 name = "Boing"
 abbreviation = "BNG"
-quantity = 1000000
+quantity = 500000
 price = 100
+
+[sub_resource type="Resource" id="Resource_058ti"]
+script = ExtResource("2_7wfts")
+name = "CMB Productions Incorporated"
+abbreviation = "CMD"
+quantity = 10000
+price = 3
+
+[sub_resource type="Resource" id="Resource_jbt8c"]
+script = ExtResource("2_7wfts")
+name = "Platinum Studios"
+abbreviation = "PTS"
+quantity = 300000
+price = 15
+
+[sub_resource type="Resource" id="Resource_axp76"]
+script = ExtResource("2_7wfts")
+name = "Grass & Grass"
+abbreviation = "GNG"
+quantity = 20000
+price = 20
+
+[sub_resource type="Resource" id="Resource_7ydad"]
+script = ExtResource("2_7wfts")
+name = "Back From The Moon"
+abbreviation = "BFTM"
+quantity = 800000000
+price = 400
+
+[sub_resource type="Resource" id="Resource_4ram1"]
+script = ExtResource("2_7wfts")
+name = "Relaxolotl"
+abbreviation = "RLXT"
+quantity = 340000
+price = 34
+
+[sub_resource type="Resource" id="Resource_ny5sw"]
+script = ExtResource("2_7wfts")
+name = "Simple But Complex"
+abbreviation = "SXORC"
+quantity = 600000
+price = 130
+
+[sub_resource type="Resource" id="Resource_dllqf"]
+script = ExtResource("2_7wfts")
+name = "Cosmic X"
+abbreviation = "CSX"
+quantity = 15000
+price = 5
 
 [resource]
 script = ExtResource("1_3lm0h")
-stocks = Array[ExtResource("2_7wfts")]([SubResource("Resource_o8ik2"), SubResource("Resource_i6rbw"), SubResource("Resource_spprh")])
+stocks = Array[ExtResource("2_7wfts")]([SubResource("Resource_o8ik2"), SubResource("Resource_i6rbw"), SubResource("Resource_spprh"), SubResource("Resource_058ti"), SubResource("Resource_jbt8c"), SubResource("Resource_axp76"), SubResource("Resource_7ydad"), SubResource("Resource_4ram1"), SubResource("Resource_ny5sw"), SubResource("Resource_dllqf")])
