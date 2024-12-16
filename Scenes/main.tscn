@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3ognxmeys708"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ognxmeys708"]
 
 [ext_resource type="Shader" path="res://Resources/crt.gdshader" id="1_ova3s"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="2_jo4yj"]
 [ext_resource type="PackedScene" uid="uid://bcr418rpntf58" path="res://Scenes/main_menu.tscn" id="3_y4eaj"]
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="4_0uxuy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vvvlq"]
 shader = ExtResource("1_ova3s")
@@ -52,6 +53,8 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5b35"]
+
 [node name="Main" type="Control"]
 material = SubResource("ShaderMaterial_vvvlq")
 layout_mode = 3
@@ -75,4 +78,34 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 98.0
+offset_right = 22.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0uxuy")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_a5b35")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a5b35")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5b35")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5b35")
+text = "IS EVERYTHING BROKEN?"
+
 [connection signal="go_to_game" from="MainMenu" to="." method="_on_main_menu_go_to_game"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
