@@ -12,7 +12,6 @@ func _ready() -> void:
         %Stocks.add_child(stock_display)
 
 func stock_display_gui_input(input: InputEvent, display: Control):
-    print(display.custom_minimum_size.y)
     if input is InputEventMouseButton:
         if input.is_pressed():
             if input.button_index == MOUSE_BUTTON_LEFT:

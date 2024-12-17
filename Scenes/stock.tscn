@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ulyi4ixow2j3"]
+[gd_scene load_steps=8 format=3 uid="uid://ulyi4ixow2j3"]
 
 [ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="1_pkvwg"]
 [ext_resource type="Script" path="res://Scripts/stock_display.gd" id="1_y2ep8"]
+[ext_resource type="Script" path="res://Scripts/graph.gd" id="3_gwbc6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgpof"]
 content_margin_left = 50.0
@@ -15,8 +16,8 @@ font = ExtResource("1_pkvwg")
 font_size = 46
 
 [sub_resource type="Curve" id="Curve_mq8up"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="CurveTexture" id="CurveTexture_o13lv"]
 curve = SubResource("Curve_mq8up")
@@ -117,8 +118,9 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="Extras"]
+[node name="Graph" type="TextureRect" parent="Extras"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_o13lv")
 expand_mode = 1
+script = ExtResource("3_gwbc6")
