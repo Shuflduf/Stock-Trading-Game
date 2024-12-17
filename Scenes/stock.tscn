@@ -5,10 +5,6 @@
 [ext_resource type="Script" path="res://Scripts/graph.gd" id="3_gwbc6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgpof"]
-content_margin_left = 50.0
-content_margin_top = 100.0
-content_margin_right = 50.0
-content_margin_bottom = 100.0
 bg_color = Color(0.5, 0.5, 0.5, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uffqd"]
@@ -23,17 +19,26 @@ point_count = 1
 curve = SubResource("Curve_mq8up")
 
 [node name="Stock" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 300)
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_cgpof")
 script = ExtResource("1_y2ep8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Basic" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 
-[node name="Name" type="Label" parent="VBoxContainer"]
+[node name="Name" type="Label" parent="MarginContainer/Basic"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -42,7 +47,7 @@ label_settings = SubResource("LabelSettings_uffqd")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Abbreviation" type="Label" parent="VBoxContainer"]
+[node name="Abbreviation" type="Label" parent="MarginContainer/Basic"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_pkvwg")
@@ -50,13 +55,13 @@ theme_override_font_sizes/font_size = 31
 text = "ABBREVIATION"
 horizontal_alignment = 1
 
-[node name="Extras" type="VBoxContainer" parent="."]
+[node name="Extras" type="VBoxContainer" parent="MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="HFlowContainer" type="HFlowContainer" parent="Extras"]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/Extras"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -64,7 +69,7 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -73,7 +78,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -82,7 +87,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -91,7 +96,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -100,7 +105,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel5" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -109,7 +114,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="Extras/HFlowContainer"]
+[node name="RichTextLabel6" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
 theme_override_font_sizes/normal_font_size = 24
@@ -118,7 +123,7 @@ text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Graph" type="TextureRect" parent="Extras"]
+[node name="Graph" type="TextureRect" parent="MarginContainer/Extras"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = SubResource("CurveTexture_o13lv")
