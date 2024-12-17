@@ -32,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k6mn0")
-stocks = ExtResource("2_7bahw")
+stocks_list = ExtResource("2_7bahw")
 
 [node name="Background" type="Panel" parent="."]
 z_index = -4096
@@ -97,5 +97,8 @@ layout_mode = 2
 layout_mode = 2
 text = "THING GOES HERE"
 label_settings = SubResource("LabelSettings_ft8bs")
+
+[node name="UpdateTimer" type="Timer" parent="."]
+wait_time = 20.0
 
 [connection signal="gui_input" from="HBoxContainer/PanelContainer" to="HBoxContainer/PanelContainer" method="_on_gui_input"]

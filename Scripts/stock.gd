@@ -12,4 +12,7 @@ extends Resource
 @export var quantity: int
 
 ## Starting price of one share. This value will change, and is only set here as a starting point.
-@export var price: int
+@export var price: float
+
+# Used to make graphs and such, each element is 20s apart
+var history: Array[float]
