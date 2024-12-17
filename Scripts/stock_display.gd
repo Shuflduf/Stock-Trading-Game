@@ -18,5 +18,8 @@ extends PanelContainer
 
 
 func _process(_delta: float) -> void:
-	%Graph.data = stock.history
-	%Graph.queue_redraw()
+	if stock != null:
+		%Graph.data = stock.history
+		%Graph.queue_redraw()
+		
+		%PriceLabel.text = "$" + str(stock.price).pad_decimals(2)

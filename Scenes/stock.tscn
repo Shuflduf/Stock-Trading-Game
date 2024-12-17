@@ -59,7 +59,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/Extras"]
 custom_minimum_size = Vector2(300, 0)
@@ -69,55 +69,20 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
+[node name="DifferenceLabel" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[color=green]Up by 20$[/color]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
+[node name="PriceLabel" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[color=green]Up by 20$[/color]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[color=green]Up by 20$[/color]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[color=green]Up by 20$[/color]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[color=green]Up by 20$[/color]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="MarginContainer/Extras/HFlowContainer"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_pkvwg")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[color=green]Up by 20$[/color]"
 fit_content = true

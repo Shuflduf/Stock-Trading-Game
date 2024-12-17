@@ -11,11 +11,14 @@ extends Resource
 ## How many shares are in circulation in the economy
 @export var quantity: int
 
+var _set_price = false
 ## Starting price of one share. This value will change, and is only set here as a starting point.
 @export var price: float:
 	set(value):
 		price = value
-		history = [value]
+		if !_set_price:
+			history = [value]
+			_set_price = true
 
 # Used to make graphs and stuff, each element is 20s apart
 var history: Array[float] = [10.0]

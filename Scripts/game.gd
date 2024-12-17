@@ -5,7 +5,13 @@ extends Control
 # This is basically how many times 20 seconds has passed
 var current_time: int
 
+func _ready() -> void:
+	for i in 50:
+		$UpdateTimer.timeout.emit()
 
 func _on_update_timer_timeout() -> void:
+	current_time += 1
 	for i in stocks_list.stocks:
-		i.history.append(i.history[-1] * randf_range(0.8, 1.2))
+		var new_price = i.history[-1] * randf_range(0.8, 1.2)
+		i.history.append(new_price)
+		i.price = new_price
