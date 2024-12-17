@@ -2,21 +2,25 @@ extends TextureRect
 
 var data: Array[float] = [0.2, 0.1, 0.1, 0.3, 0.2, 0.6, 0.9, 0.8]
 
+const FONT = preload("res://Resources/Fonts/W95FA.otf")
+
 func _draw() -> void:
-	const FONT = preload("res://Resources/Fonts/W95FA.otf")
-	
+	var max_amount = 50
 	var margins = 40
+	var data_slice = data.slice(clamp(data.size() - max_amount, 0, INF))
+
+	var max_value = data_slice.max()
+	var min_value = data_slice.min()
+	var length = (size.x - margins) / (data_slice.size() - 1)
+	
 	draw_line(Vector2(margins, 0), Vector2(margins, size.y - margins), Color.BLACK, 3)
 	draw_line(Vector2(margins, size.y - margins), Vector2(size.x, size.y - margins), Color.BLACK, 3)
-	draw_string(FONT, Vector2(5, 20), str(data.max()), HORIZONTAL_ALIGNMENT_RIGHT, -1, 24, Color.BLACK)
-	draw_string(FONT, Vector2(5, size.y - margins), str(data.min()), HORIZONTAL_ALIGNMENT_RIGHT, -1, 24, Color.BLACK)
+	draw_string(FONT, Vector2(5, 20), str(max_value).pad_decimals(0), HORIZONTAL_ALIGNMENT_RIGHT, -1, 24, Color.BLACK)
+	draw_string(FONT, Vector2(5, size.y - margins), str(min_value).pad_decimals(0), HORIZONTAL_ALIGNMENT_RIGHT, -1, 24, Color.BLACK)
 
-	var max_value = data.max()
-	var min_value = data.min()
-	var length = (size.x - margins) / (data.size() - 1)
 	
 	var normalized_data = []
-	for value in data:
+	for value in data_slice:
 		var normalized_value = (value - min_value) / (max_value - min_value)
 		normalized_data.append(abs(1 - normalized_value))
 	

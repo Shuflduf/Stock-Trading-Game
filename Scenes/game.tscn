@@ -99,7 +99,6 @@ text = "THING GOES HERE"
 label_settings = SubResource("LabelSettings_ft8bs")
 
 [node name="UpdateTimer" type="Timer" parent="."]
-wait_time = 20.0
 autostart = true
 
 [connection signal="gui_input" from="HBoxContainer/PanelContainer" to="HBoxContainer/PanelContainer" method="_on_gui_input"]

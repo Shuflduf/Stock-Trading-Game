@@ -15,4 +15,4 @@ extends Resource
 @export var price: float
 
 # Used to make graphs and such, each element is 20s apart
-var history: Array[float]
+var history: Array[float] = [10.0]
