@@ -12,7 +12,7 @@ expand_margin_bottom = 10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_sjyd8"]
 font = ExtResource("2_qq3xu")
-font_size = 41
+font_size = 64
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -44,7 +44,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dcb7e")
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
-text = "ajsdhahsdjahsdkad"
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "GNG"
 label_settings = SubResource("LabelSettings_sjyd8")
