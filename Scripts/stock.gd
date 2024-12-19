@@ -17,8 +17,14 @@ var _set_price = false
 	set(value):
 		price = value
 		if !_set_price:
-			history = [value]
+			initial_price = value
+			history[0] = value
 			_set_price = true
+		else:
+			history.append(value)
 
 # Used to make graphs and stuff, each element is 20s apart
-var history: Array[float] = [10.0]
+var history: Array[float] = [0.0]
+
+var demand = 1
+var initial_price: float
