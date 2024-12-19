@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://xhye14a32i5a"]
+[gd_scene load_steps=5 format=3 uid="uid://xhye14a32i5a"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/shop.gd" id="1_r0wxu"]
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_qq3xu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcb7e"]
 bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjyd8"]
+font = ExtResource("2_qq3xu")
+font_size = 41
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -10,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r0wxu")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -35,3 +47,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dcb7e")
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 text = "ajsdhahsdjahsdkad"
+label_settings = SubResource("LabelSettings_sjyd8")
