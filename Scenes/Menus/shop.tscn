@@ -1,18 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://xhye14a32i5a"]
+[gd_scene load_steps=8 format=3 uid="uid://b5w3k8v7vu3xc"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/shop.gd" id="1_r0wxu"]
 [ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_qq3xu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcb7e"]
-bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+bg_color = Color(0.4, 0.4, 0.4, 1)
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_sjyd8"]
+[sub_resource type="Theme" id="Theme_h0r7e"]
+default_font = ExtResource("2_qq3xu")
+default_font_size = 36
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fx786"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eyup"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8y0ja"]
 font = ExtResource("2_qq3xu")
-font_size = 64
+font_size = 36
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -40,14 +53,77 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="BuyMenu" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dcb7e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/BuyMenu"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qq3xu")
+theme_override_font_sizes/font_size = 36
+selected = 0
+item_count = 1
+popup/item_0/text = "GNG"
+
+[node name="SpinBox" type="SpinBox" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_h0r7e")
+min_value = 1.0
+value = 1.0
+prefix = "x"
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qq3xu")
+theme_override_font_sizes/font_size = 36
+text = "Place Order"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fx786")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4eyup")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-text = "GNG"
-label_settings = SubResource("LabelSettings_sjyd8")
+size_flags_horizontal = 2
+text = "GNG x 1"
+label_settings = SubResource("LabelSettings_8y0ja")
+vertical_alignment = 1
+
+[node name="SellPrice" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/normal_font = ExtResource("2_qq3xu")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=green]$360.50[/color][/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Profit" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/normal_font = ExtResource("2_qq3xu")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=green]+10.20[/color][/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sell Shares"
