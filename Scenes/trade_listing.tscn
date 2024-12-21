@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b83kledvjwrsc"]
+
+[ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="1_e0qa7"]
+[ext_resource type="Script" path="res://Scripts/trade_listing.gd" id="1_wgupo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eyup"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8y0ja"]
+font = ExtResource("1_e0qa7")
+font_size = 36
+
+[node name="TradeListing" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_4eyup")
+script = ExtResource("1_wgupo")
+stock_name = "GNG"
+shares_amount = 21
+original_price = 50.0
+current_price = 38.545
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Content" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "GNG x 21"
+label_settings = SubResource("LabelSettings_8y0ja")
+vertical_alignment = 1
+
+[node name="SellPrice" type="RichTextLabel" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Sell Price
+"
+theme_override_fonts/normal_font = ExtResource("1_e0qa7")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[color=red]$809.44"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Profit" type="RichTextLabel" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Profit"
+theme_override_fonts/normal_font = ExtResource("1_e0qa7")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=red](-240.55)"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_e0qa7")
+theme_override_font_sizes/font_size = 24
+text = "Sell Shares"

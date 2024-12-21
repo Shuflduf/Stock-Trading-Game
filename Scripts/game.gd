@@ -1,5 +1,7 @@
 extends Control
 
+signal stocks_updated
+
 @export var stocks_list: StocksList
 
 var current_stocks: Dictionary = {}
@@ -16,3 +18,4 @@ func _on_update_timer_timeout() -> void:
         var target_price = i.initial_price * i.demand
         var new_price = (i.history[-1] * 0.2 * randf_range(0.8, 1.2)) + (target_price)
         i.price = new_price
+    stocks_updated.emit()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Menus/shop.gd" id="1_r0wxu"]
 [ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_qq3xu"]
+[ext_resource type="PackedScene" uid="uid://b83kledvjwrsc" path="res://Scenes/trade_listing.tscn" id="3_vndsw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcb7e"]
 bg_color = Color(0.4, 0.4, 0.4, 1)
@@ -14,18 +15,11 @@ expand_margin_bottom = 10.0
 default_font = ExtResource("2_qq3xu")
 default_font_size = 36
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fx786"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eyup"]
-bg_color = Color(0.4, 0.4, 0.4, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_8y0ja"]
+[sub_resource type="LabelSettings" id="LabelSettings_w8fp7"]
 font = ExtResource("2_qq3xu")
 font_size = 36
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fx786"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -35,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r0wxu")
+trade_listing = ExtResource("3_vndsw")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -45,12 +40,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
+theme_override_constants/separation = 25
 
 [node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="BuyMenu" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
@@ -59,71 +56,39 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dcb7e")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/BuyMenu"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+layout_mode = 2
+
+[node name="StockOptions" type="OptionButton" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qq3xu")
 theme_override_font_sizes/font_size = 36
-selected = 0
-item_count = 1
-popup/item_0/text = "GNG"
 
-[node name="SpinBox" type="SpinBox" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+[node name="SharesAmount" type="SpinBox" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_h0r7e")
 min_value = 1.0
 value = 1.0
 prefix = "x"
 
-[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+text = "$56.30"
+label_settings = SubResource("LabelSettings_w8fp7")
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+[node name="PlaceOrder" type="Button" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("2_qq3xu")
 theme_override_font_sizes/font_size = 36
 text = "Place Order"
 
 [node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
 theme_override_styles/separator = SubResource("StyleBoxEmpty_fx786")
 
-[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4eyup")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "GNG x 1"
-label_settings = SubResource("LabelSettings_8y0ja")
-vertical_alignment = 1
-
-[node name="SellPrice" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/normal_font = ExtResource("2_qq3xu")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "[center][color=green]$360.50[/color][/center]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="Profit" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/normal_font = ExtResource("2_qq3xu")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "[center][color=green]+10.20[/color][/center]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-text = "Sell Shares"
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/PlaceOrder" to="." method="_on_place_order_pressed"]
