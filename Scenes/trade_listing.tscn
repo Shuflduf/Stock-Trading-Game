@@ -15,6 +15,8 @@ font = ExtResource("1_e0qa7")
 font_size = 36
 
 [node name="TradeListing" type="PanelContainer"]
+offset_right = 499.0
+offset_bottom = 35.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4eyup")
 script = ExtResource("1_wgupo")
 stock_name = "GNG"
@@ -29,7 +31,7 @@ theme_override_constants/separation = 20
 [node name="Content" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 text = "GNG x 21"
 label_settings = SubResource("LabelSettings_8y0ja")
 vertical_alignment = 1
@@ -37,7 +39,7 @@ vertical_alignment = 1
 [node name="SellPrice" type="RichTextLabel" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 4
 tooltip_text = "Sell Price
 "
@@ -51,7 +53,7 @@ autowrap_mode = 0
 [node name="Profit" type="RichTextLabel" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 4
 tooltip_text = "Profit"
 theme_override_fonts/normal_font = ExtResource("1_e0qa7")
@@ -63,7 +65,7 @@ autowrap_mode = 0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_e0qa7")
 theme_override_font_sizes/font_size = 24
 text = "Sell Shares"
