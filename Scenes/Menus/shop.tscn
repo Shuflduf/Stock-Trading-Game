@@ -76,6 +76,7 @@ value = 1.0
 prefix = "x"
 
 [node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "$56.30"
 label_settings = SubResource("LabelSettings_w8fp7")
@@ -91,4 +92,6 @@ text = "Place Order"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_fx786")
 
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/HBoxContainer/StockOptions" to="." method="_on_stock_options_item_selected"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/HBoxContainer/SharesAmount" to="." method="_on_shares_amount_value_changed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer/PlaceOrder" to="." method="_on_place_order_pressed"]

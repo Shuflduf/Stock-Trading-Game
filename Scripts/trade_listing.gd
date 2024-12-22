@@ -1,3 +1,4 @@
+class_name TradeListing
 extends PanelContainer
 
 @export var stock_name: String
