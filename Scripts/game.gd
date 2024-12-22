@@ -21,12 +21,8 @@ func _on_update_timer_timeout() -> void:
 		var target_price = i.initial_price * i.demand
 		var dir = target_price - i.price
 
-		# If the price is close to the target price, add a small random fluctuation
-		if abs(dir) < 0.01:
-			var fluctuation = randf_range(-0.1, 0.1)
-			i.price += fluctuation
-		else:
-			var adjustment = dir * randf_range(-0.3, 0.5)
-			i.price += adjustment
+
+		var adjustment = dir * randf_range(-0.1, 0.2) + randf_range(-0.1, 0.2)
+		i.price = clamp(i.price + adjustment, 0, INF)
 
 	stocks_updated.emit()

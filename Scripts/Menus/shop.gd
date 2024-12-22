@@ -21,6 +21,7 @@ func _on_place_order_pressed() -> void:
 	create_trade_listing(new_trade)
 	main_game.current_stocks.append(new_trade)
 
+	main_game.money -= new_trade.original_price * new_trade.amount
 	main_game.stocks_list.stocks.filter(func(stock): return new_trade.name == stock.abbreviation)[0].demand += (%SharesAmount.value / 50)
 
 func create_trade_listing(data: StockListingData):
@@ -38,6 +39,9 @@ func _on_stock_options_item_selected(index: int) -> void:
 	var stock_name = %StockOptions.get_item_text(index)
 	var price = main_game.stocks_list.stocks.filter(func(stock): return stock_name == stock.abbreviation)[0].price
 	%CostLabel.text = "$" + str(price * %SharesAmount.value).pad_decimals(2)
+
+	%PlaceOrder.disabled = price * %SharesAmount.value > main_game.money
+	%PlaceOrder.tooltip_text = "Too Expensive!" if %PlaceOrder.disabled else ""
 
 
 func _on_shares_amount_value_changed(_value: float) -> void:

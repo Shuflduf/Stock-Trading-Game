@@ -84,6 +84,7 @@ text = "$56.30"
 label_settings = SubResource("LabelSettings_w8fp7")
 
 [node name="PlaceOrder" type="Button" parent="ScrollContainer/VBoxContainer/BuyMenu/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("2_qq3xu")
