@@ -18,7 +18,7 @@ func _update_label():
 	%SellPrice.text = bbcode_start + "$" + str(current_price * shares_amount).pad_decimals(2)
 	%Profit.text = bbcode_start + "(" + ("+" if difference > 0 else "") + str(difference * shares_amount).pad_decimals(2) + ")"
 
-	%SellPrice.tooltip_text = "Original: " + str(original_price).pad_decimals(2)
+	%SellPrice.tooltip_text = "Original: " + str(original_price * shares_amount).pad_decimals(2)
 
 
 func _on_sell_pressed() -> void:

@@ -48,20 +48,23 @@ stretch_mode = 6
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Name: ME"
 label_settings = SubResource("LabelSettings_2ve80")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Money" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
-text = "Money: $$"
+text = "Money: "
 label_settings = SubResource("LabelSettings_2ve80")
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
-text = "Title: THE BEST"
+text = "Title: Entrepreneur"
 label_settings = SubResource("LabelSettings_2ve80")
