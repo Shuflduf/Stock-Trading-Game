@@ -33,7 +33,7 @@ func change_size_all():
 func buffer_reenable():
 	get_tree().create_timer(SIZE_CHANGE_SECONDS).timeout.connect(func(): changing_size = false)
 
-func select_item(item: OptionMenu):
+func select_item(item: MenuOption):
 	if collapsed:
 		change_size_all()
 		return

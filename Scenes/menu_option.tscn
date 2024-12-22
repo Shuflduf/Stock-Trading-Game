@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://brfg2httpwfmo"]
+[gd_scene load_steps=7 format=3 uid="uid://brfg2httpwfmo"]
 
 [ext_resource type="Script" path="res://Scripts/menu_option.gd" id="1_4i4y4"]
 [ext_resource type="Texture2D" uid="uid://betgcy6sjqncu" path="res://icon.svg" id="1_ynu0d"]
+[ext_resource type="Shader" path="res://Resources/circle.gdshader" id="2_ojxpj"]
 [ext_resource type="FontFile" uid="uid://bfamv70276jo3" path="res://Resources/Fonts/W95FA.otf" id="2_r8k4g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oftga"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsuhh"]
+resource_local_to_scene = true
+shader = ExtResource("2_ojxpj")
+shader_parameter/outer_radius = 1.0
+shader_parameter/inner_radius = 0.8
+shader_parameter/turn = 0.0
+shader_parameter/blur = 0.0
+shader_parameter/fill_ratio = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_m038j"]
 font = ExtResource("2_r8k4g")
@@ -27,13 +30,9 @@ script = ExtResource("1_4i4y4")
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Outline" type="PanelContainer" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_oftga")
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Outline"]
+material = SubResource("ShaderMaterial_tsuhh")
 layout_mode = 2
 texture = ExtResource("1_ynu0d")
 expand_mode = 3

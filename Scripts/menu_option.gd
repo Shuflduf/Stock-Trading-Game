@@ -20,10 +20,10 @@ func expand(time: float):
 	tween.tween_property(%Label, ^"text", item_name, time)
 
 func deselect():
-	%Outline.self_modulate.a = 0
+	%TextureRect.material.set_shader_parameter("inner_radius", 0.8)
 
 func select():
-	%Outline.self_modulate.a = 1
+	%TextureRect.material.set_shader_parameter("inner_radius", 0.0)
 
 
 func _on_gui_input(event: InputEvent) -> void:
