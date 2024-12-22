@@ -26,5 +26,5 @@ var _set_price = false
 # Used to make graphs and stuff, each element is 20s apart
 var history: Array[float] = [0.0]
 
-var demand = 1
+var demand := 1.0
 var initial_price: float
