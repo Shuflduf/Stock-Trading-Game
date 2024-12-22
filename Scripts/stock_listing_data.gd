@@ -4,3 +4,5 @@ extends Resource
 @export var name: String
 @export var amount: int
 @export var original_price: float
+
+var id: int

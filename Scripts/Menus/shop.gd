@@ -18,6 +18,7 @@ func _on_place_order_pressed() -> void:
 	new_trade.amount = int(%SharesAmount.value)
 	new_trade.name = %StockOptions.get_item_text(%StockOptions.get_selected_id())
 	new_trade.original_price = main_game.stocks_list.stocks.filter(func(stock): return new_trade.name == stock.abbreviation)[0].price
+	new_trade.id = randi()
 	create_trade_listing(new_trade)
 	main_game.current_stocks.append(new_trade)
 
@@ -31,8 +32,17 @@ func create_trade_listing(data: StockListingData):
 	new_trade.shares_amount = data.amount
 	new_trade.original_price = data.original_price
 	new_trade.current_price = data.original_price
+	new_trade.id = data.id
 	new_trade.call_deferred(&"_update_label")
 
+	new_trade.sold.connect(shares_sold.bind(new_trade))
+
+func shares_sold(trade: TradeListing):
+	main_game.money += trade.current_price * trade.shares_amount
+	var to_remove = main_game.current_stocks.filter(func(stock): return trade.id == stock.id)[0]
+	main_game.current_stocks.erase(to_remove)
+	trade.queue_free()
+	main_game.stocks_list.stocks.filter(func(stock): return trade.stock_name == stock.abbreviation)[0].demand -= (%SharesAmount.value / 50)
 
 
 func _on_stock_options_item_selected(index: int) -> void:

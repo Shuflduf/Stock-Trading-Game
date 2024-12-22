@@ -63,9 +63,11 @@ text = "[color=red](-240.55)"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Sell" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_e0qa7")
 theme_override_font_sizes/font_size = 24
 text = "Sell Shares"
+
+[connection signal="pressed" from="HBoxContainer/Sell" to="." method="_on_sell_pressed"]
